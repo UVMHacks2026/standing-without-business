@@ -37,29 +37,43 @@ for(let i = 1; i < years * y_size; i++){
 
 var timeframe = document.getElementById("timeframes");
 timeframe.addEventListener("click", set_timeframe, false);
+var c_period = document.getElementById("compound-period");
+c_period.addEventListener("mouseup", set_c_period, false);
 var interest = document.getElementById("interest");
 interest.addEventListener("input", set_interest, false);
 var interest_label = document.getElementById("interest-label");
 
+var initial_investment = document.getElementById("initial-investment");
+initial_investment.innerHTML += " " + data.initial_investment;
+
 function set_timeframe() {
     if(timeframe.value != years){
         years = timeframe.value;
-        update_graph(timeframe.value, monthly_rate);
+        update_graph(timeframe.value, monthly_rate, y_size);
     }
 }
 
+function set_c_period() {
+  console.log("changed period");
+  console.log(c_period.value);
+  if(c_period.value != y_size){
+    y_size = c_period.value;
+    var period_rate = ((1 + growth_rate)**(1/y_size)) - 1;
+    update_graph(timeframe.value, period_rate, y_size);
+  }
+}
 
 function set_interest() {
     if((interest.value / 100) != growth_rate && interest.value != ""){
         interest_label.innerHTML = interest.value;
         growth_rate = interest.value / 100;
         monthly_rate = ((1 + growth_rate)**(1/12)) - 1;
-        update_graph(timeframe.value, monthly_rate);
+        update_graph(timeframe.value, monthly_rate, y_size);
     }
 }
 
-function update_graph(timeframe, interest) {
-    future_balance = new Array(timeframe * 12);
+function update_graph(timeframe, interest, compounding_length) {
+    future_balance = new Array(timeframe * compounding_length);
     var labels = [];
     for(let i = 0; i < timeframe; i++){
         for(const label of months){
@@ -68,7 +82,7 @@ function update_graph(timeframe, interest) {
     }
    
     future_balance[0] = data.initial_investment;
-    for(let i = 1; i < timeframe*12; i++){
+    for(let i = 1; i < timeframe*y_size; i++){
         future_balance[i] = future_balance[0] * ((1 + interest)**(i));
     }
     var title = timeframe + "Y Growth"

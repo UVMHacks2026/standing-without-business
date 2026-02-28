@@ -1,0 +1,16 @@
+.left-div {
+    margin-left:30%;
+    margin-top:5%;
+    width: 20%;
+}
+.timeframes {
+    justify-content: center;
+}
+.right-div {
+    width: 45%;
+    margin-right: 5%;
+}
+
+.chart-div {
+    display: flex;
+}
