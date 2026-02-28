@@ -1,0 +1,5 @@
+[auth.external.google]
+enabled = true
+client_id = "<>520412788089-rk5nqa144ofmamp2i4asve7s0v5qfi8o.apps.googleusercontent.com"
+secret = "../client_secret.json"
+skip_nonce_check = false
