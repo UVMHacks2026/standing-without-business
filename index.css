@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #154734;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#application-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px ;
+    padding: 20px;
+}
+.choice {
+    background-color: #FFD100;
+    color: black;
+    padding: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+#welcome_banner{
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+}
+footer {
+    text-align: center;
+    background-color:#154734;
+    color: white;
+    padding: 24px;
+    min-height: 100vh;
+}
+#signin-container {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 10px 40vh 10px;
+    background-color: white;
+    text-align: center;
+}
+button {
+    background-color: #154734;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
