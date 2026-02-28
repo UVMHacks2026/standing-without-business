@@ -11,7 +11,9 @@ header {
     padding: 10px;
     text-align: center;
 }
-
+.fc-event-main-frame {
+  white-space: normal; /* Allows the text to wrap and respects <br> */
+}
 .calendar{
     background-color: #154734;
     color :#154734;

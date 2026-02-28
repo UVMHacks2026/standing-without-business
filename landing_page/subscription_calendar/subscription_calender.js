@@ -19,9 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const dataList = document.getElementById('data-list');
 
             data.forEach(person => {
+                company_and_price = person.transaction + " $" + person.transaction_price
                 if (item_has_appeared.includes(person.transaction)) {
                     var newEvent = {
-                        title: person.transaction,
+                        title: company_and_price,
                         start: person.transaction_date,
                         end: person.transaction_date,
                         color: "#FFD100",
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 else {
                     item_has_appeared.push(person.transaction)
                     var newEvent = {
-                        title: person.transaction,
+                        title: company_and_price,
                         start: person.transaction_date,
                         end: person.transaction_date,
                         allDay: true,
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 calendar.addEvent(newEvent);
 
 
-            }); 
+            });
 
         }
         catch (error) {
