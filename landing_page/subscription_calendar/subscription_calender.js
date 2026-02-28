@@ -1,4 +1,6 @@
 const item_has_appeared = [];
+
+amount_of_money_paid = 0;
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -39,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     };
                 }
                 calendar.addEvent(newEvent);
-
+                amount_of_money_paid = amount_of_money_paid+ parseInt(person.transaction_price);
+                document.getElementById('money').textContent ="You spend " + "$" + amount_of_money_paid + " on subscription this year";
 
             });
 
