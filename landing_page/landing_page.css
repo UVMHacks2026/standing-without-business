@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: lightslategray;
+    background-color: #154734;
     color: white;
     padding: 10px;
     text-align: center;
@@ -20,8 +20,8 @@ header {
     padding: 20px;
 }
 .choice {
-    background-color: lightcoral;
-    color: white;
+    background-color: #FFD100;
+    color: black;
     padding: 30px;
     border-radius: 5px;
     font-size: 12px;
@@ -33,7 +33,7 @@ header {
 }
 footer {
     text-align: center;
-    background-color: lightslategray;
+    background-color:#154734;
     color: white;
     padding: 24px;
 }
