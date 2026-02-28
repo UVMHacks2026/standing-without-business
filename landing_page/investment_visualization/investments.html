@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment</title>
+    <link rel = "stylesheet" href="../landing_page.css">
+
 </head>
-<script type="module" src="example-graph.js"></script>
+<script type="module" src="investments-graph.js"></script>
 <script type="module" src="testdata.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <body>
-    <div>
+    <header> 
+        <h1> Welcome to the investments tracking page of our Financial Help website</h1>
+        <h4> Here you can simulate returns based on your current investment balance 
+            with varying interest and timeframes
+        </h4>
+    </header>
+    <div id="welcome_banner">
+        <p id="greetings"></p>
+    </div>
+    <div id="chart-div" class="chart-div">
         <canvas id="myChart"></canvas>
     </div>
-    <script type="module" src="example-graph.js"></script>
     <select name="timeframes" id="timeframes">
         <option value="1">1 Year</option>
         <option value="5">5 Year</option>
@@ -27,6 +37,9 @@
         <label for="interest" id="interest">% interest between 1 and 100</label>
 
     </div>
+    <footer>
+        <p> This project has been created as part of UVM's 2026 Hackathon, by the team "Standing Without Business"</p>
+    </footer>
     
 </body>
 </html>

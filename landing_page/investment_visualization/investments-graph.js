@@ -1,9 +1,8 @@
 // Test data
-import { json_data } from '../investment_visualization/testdata.js';
+import { json_data } from './testdata.js';
 
 const data = JSON.parse(json_data);
-const ctx = document.getElementById('myChart');
-console.log(data.labels);
+var ctx = document.getElementById('myChart');
 const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var y_size = 12;
 var years = 1;
