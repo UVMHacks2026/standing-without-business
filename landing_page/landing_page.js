@@ -1,10 +1,13 @@
 const supabase_url = "https://zuhqfrmrubbxntpzhkzl.supabase.co";
 const supabase_key = "sb_publishable_mXKpTqxjwXMPiGsDdchoqQ_jHgCf2Gh";
 
-window.db = window.supabase.createClient(supababase_url, supabase_key);
+const supabase = window.supabase.createClient(
+  supabase_url,
+  supabase_key
+);
 
 async function getUser() {
-    const { data, error } = await window.db.auth.getUser();
+    const { data, error } = await supabase.auth.getUser();
     if (error) {
         console.error(error.message);
         return;
