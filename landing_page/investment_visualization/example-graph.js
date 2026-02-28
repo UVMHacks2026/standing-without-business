@@ -40,6 +40,7 @@ var timeframe = document.getElementById("timeframes");
 timeframe.addEventListener("click", set_timeframe, false);
 var interest = document.getElementById("interest");
 interest.addEventListener("input", set_interest, false);
+var interest_label = document.getElementById("interest-label");
 
 function set_timeframe() {
     if(timeframe.value != years){
@@ -51,6 +52,7 @@ function set_timeframe() {
 
 function set_interest() {
     if((interest.value / 100) != growth_rate && interest.value != ""){
+        interest_label.innerHTML = interest.value;
         growth_rate = interest.value / 100;
         monthly_rate = ((1 + growth_rate)**(1/12)) - 1;
         update_graph(timeframe.value, monthly_rate);

@@ -21,7 +21,12 @@
         <option value="10">10 Year</option>
         <option value="20">20 Year</option>
     </select>
-    <input type="number" id="interest" min="1" max="100" value="5">
-    <label for="interest">% interest between 1 and 100</label>
+    <div>
+        <input type="range" id="interest" min="1" max="100" value="5" step="1">
+        <label for="interest" id="interest-label">5%</label><br>
+        <label for="interest" id="interest">% interest between 1 and 100</label>
+
+    </div>
+    
 </body>
 </html>
