@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment</title>
 </head>
-<script src="example-graph.js"></script>
-<body>
-    <div style="width: 500px;"><canvas id="dimensions"></canvas></div><br/>
+<script type="module" src="example-graph.js"></script>
+<script type="module" src="testdata.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script type="module" src="dimensions.js"></script>
-    
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script type="module" src="example-graph.js"></script>
 </body>
 </html>
