@@ -13,7 +13,7 @@ future_balance[0] = data.initial_investment;
 var growth_rate = 0.05;
 var monthly_rate = (growth_rate + 1)**(1/12) - 1;
 for(let i = 1; i < years * y_size; i++){
-    future_balance[i] = future_balance[0] * (1 + monthly_rate)**i;
+    future_balance[i] = future_balance[0] * ((1 + monthly_rate)**i);
 }
   
     var a = new Chart(ctx, {
@@ -38,13 +38,26 @@ for(let i = 1; i < years * y_size; i++){
 
 var timeframe = document.getElementById("timeframes");
 timeframe.addEventListener("click", set_timeframe, false);
+var interest = document.getElementById("interest");
+interest.addEventListener("input", set_interest, false);
 
 function set_timeframe() {
-    console.log(timeframe.value);
-    update_graph(timeframe.value)
+    if(timeframe.value != years){
+        years = timeframe.value;
+        update_graph(timeframe.value, monthly_rate);
+    }
 }
 
-function update_graph(timeframe) {
+
+function set_interest() {
+    if((interest.value / 100) != growth_rate && interest.value != ""){
+        growth_rate = interest.value / 100;
+        monthly_rate = ((1 + growth_rate)**(1/12)) - 1;
+        update_graph(timeframe.value, monthly_rate);
+    }
+}
+
+function update_graph(timeframe, interest) {
     future_balance = new Array(timeframe * 12);
     var labels = [];
     for(let i = 0; i < timeframe; i++){
@@ -55,7 +68,7 @@ function update_graph(timeframe) {
    
     future_balance[0] = data.initial_investment;
     for(let i = 1; i < timeframe*12; i++){
-        future_balance[i] = future_balance[0] * ((1 + monthly_rate)**(i));
+        future_balance[i] = future_balance[0] * ((1 + interest)**(i));
     }
     var title = timeframe + "Y Growth"
     a.data.datasets = [{

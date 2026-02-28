@@ -15,12 +15,13 @@
         <canvas id="myChart"></canvas>
     </div>
     <script type="module" src="example-graph.js"></script>
-    <!-- <input type="text" id="timeframe"> -->
     <select name="timeframes" id="timeframes">
         <option value="1">1 Year</option>
         <option value="5">5 Year</option>
         <option value="10">10 Year</option>
         <option value="20">20 Year</option>
     </select>
+    <input type="number" id="interest" min="1" max="100">
+    <label for="interest">% interest between 1 and 100</label>
 </body>
 </html>
