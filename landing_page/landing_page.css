@@ -36,4 +36,5 @@ footer {
     background-color:#154734;
     color: white;
     padding: 24px;
+    min-height: 100vh;
 }
