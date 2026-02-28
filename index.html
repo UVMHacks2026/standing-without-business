@@ -8,10 +8,19 @@
     <link rel ="stylesheet" href ="index.css" >
 </head>
 <body>
+<div id="signin-container">
+    <h1>Welcome! Please use the secure sign in below</h1>
+    <button id="google-login">Sign in with Google</button>
+</div>
+
     <!-- you will want to change this somehow, and make it so that when someone log in succefully, they 
      will be sent directly to the landing_page. For now this is here to allow us to navigate between page)-->
-    
     <a href = "landing_page/landing_page.html"> 
     landing page </a>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="index.js" type="module"></script>
+    <footer>
+        <p> This project has been created as part of UVM's 2026 Hackathon, by the team "Standing Without Business"</p>
+    </footer>
 </body>
 </html>
