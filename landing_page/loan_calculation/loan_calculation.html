@@ -5,29 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan calc</title>
     <script src="./loan_calculation.js"></script>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0">
+    </script>
     <link rel="stylesheet" href="loan_calculation.css">
 </head>
 <body>
     <p>
         Loan Calculator
     </p>
-    <label for="principle">Principle</label>
-    <input type="number" id="principle" name="principle">
-    <br>
-    <label for="interest">Interest</label>
-    <input type="number" id="interest" name="interest">
-    <br>
-    <label for="term">Term</label>
-    <input type="number" id="term" name="term">
-    <br>
-    <label for="monthly">Monthly Payment</label>
-    <input type="number" id="monthly" name="monthly">
-    <br>
-    <button type="button" id="submit" name="submit" onclick="submit()">Submit</button>
+    <div class="wrapper">
+        <div class="child">
+            <label for="principle">Principle</label>
+            <input type="number" id="principle" name="principle">$</input>
+            <br>
+            <label for="interest">Interest</label>
+            <input type="number" id="interest" name="interest">%</input>
+            <br>
+            <label for="term">Term</label>
+            <input type="number" id="term" name="term"> years</input>
+            <br>
+            <label id="monthly">Monthly Payment:</label>
+            <br>
+            <button type="button" id="submit" name="submit" onclick="submit()">Submit</button>
+            <br>
+            <br>
+            <div id="table-container"></div>
+            <br>
+        </div>
+        <div class="child">
+            <canvas id="myChart" style="height:100%;min-width:700px">
+            </canvas>
 
-    <div id="table-container"></div>
-
-    <footer style="padding-top: 50%;"> <!--remove thing later-->
+        </div>
+    </div>
+    <br>
+    <br>
+    <footer> <!--remove thing later-->
         <p> This project has been created as part of UVM's 2026 Hackathon, by the team "Standing Without Business"</p>
         <a href="landing_page/landing_page.html"> Back to menu </a>
     </footer>
