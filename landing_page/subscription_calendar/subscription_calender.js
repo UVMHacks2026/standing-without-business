@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: company_and_price,
                         start: person.transaction_date,
                         end: person.transaction_date,
-                        color: "#FFD100",
+                        color: "#154734",
                         allDay: true,
                     };
                 }
